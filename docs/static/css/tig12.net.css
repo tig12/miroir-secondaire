@@ -1,0 +1,419 @@
+/******************************************************************************
+    Style for tig12.net
+    
+    @license    GPL
+    @history    2023-09-01 03:31:21+02:00, Thierry Graff : Copy from g5.github.io
+********************************************************************************/
+
+@import "style.css";
+
+@media print{
+    .right,
+    .prevnext{
+        display:none;
+    }
+}
+
+:root {
+    --right-bg-color:#c6f8f7;
+}
+
+/* ================ Semantic ================ */
+.intro{
+    font-size:1.2rem;
+    margin:1rem 0 1rem 2rem;
+    line-height:1.2;
+}
+.warning{
+    width:50%;
+    padding:.5rem;
+    margin:.5rem;
+    background:gold;
+    border:1px solid grey;
+}
+
+/* ================ General styles ================ */
+*{
+  line-height:1.5;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* needed for container min-height */
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    height:100%;
+    background:linear-gradient(90deg, #e1d99d 0%, #ebeacc 75%); 
+/* background:#eee; */
+    padding-top:0;
+    padding-left:0;
+    padding-bottom:1rem;
+    margin:0;
+}
+a{
+    text-decoration:none;
+}
+/* a:hover{
+    text-decoration:underline;
+} */
+
+img{
+    background:white;
+}
+
+pre{
+    background:lightgrey;
+    padding:.5rem;
+    margin:.5rem;
+}
+pre.normal{background:none;}
+code.color{background:lightgrey;}
+
+/* ================ Headings ================ */
+h1{
+    width:100%;
+    margin:auto;
+    text-align:center;
+    padding:0.3rem;
+    margin:1rem 0;
+    margin:2rem;
+}
+
+h1 .subtitle{font-size:0.8em;}
+h2{
+    margin:1rem 0;
+}
+h3{
+    margin:1rem 0;
+}
+
+/* ================ Site layout ================ */
+/* .container = direct children of body */
+.container{
+    position:relative;      /* needed for footer positioning */
+    height:auto !important; /* real browsers */
+    min-height:100%;        /* real browsers */
+    flex:1 0 auto;
+    display:flex;
+    flex-flow:row wrap;
+}
+
+/* .main and .right = direct children of .container */
+.main{
+    flex:1 1 82%;
+    order:1; /* In the html code, write .left sidebar after .main area */
+    padding-right:.5rem;
+    padding-left:.5rem;
+    padding-bottom:1rem;
+}
+
+.sidebar-right{
+    text-align:left;
+    flex:1 1 18%;
+    order:2; /* In the html code, write sidebar after .main area */
+    border-left:1px solid grey;
+}
+/* See below for styles inside .right */
+
+/* ================ footer ================ */
+footer{
+    width:100%;
+    bottom:0; /* stick to bottom */
+    text-align:center;
+}
+footer>div{
+    background:black;
+    padding-bottom:3px;
+}
+footer a{
+    display:inline-block;
+    padding: 0 2em;
+    color:lightgray;
+}                                                 
+
+.content{ /* suppress ? (cf pages yourte) */
+    padding:1rem .5rem 2rem 1rem;
+}
+
+/* ================ right ================ */
+.sidebar-right ul{
+    list-style:none;
+}
+.sidebar-right .title{ /* => obsolete ? */
+    font-weight:bold;
+    font-size:1.1rem;
+}
+.sidebar-right .normal{ /* => obsolete ? */
+    padding-left:.3rem;
+    padding-bottom:.3rem;
+}
+/* right for normal pages */
+.sidebar-right .nav{
+    border:1px solid grey;
+    border-radius:4px;
+    box-shadow:5px 5px 10px 0px rgba(0,0,0,0.25);
+    margin:8rem 1.5rem 0 1.5rem;
+    padding-bottom:1rem;
+    background:var(--right-bg-color);
+}
+.sidebar-right .nav .rubric{
+    font-weight:bold;
+    font-size:1.1rem;
+    text-align:center;
+    margin-top:1rem;
+    margin-bottom:1rem;
+}
+.sidebar-right .nav .links{
+    margin-right:.5rem;
+    padding-left:.5rem;
+}
+.sidebar-right .nav .links>li{
+    margin-bottom:.3rem;
+    margin-left:.1rem;
+    padding:.2rem;
+}
+
+
+/* ================ Navigation ================ */
+.prevnext{
+    font-family:DejaVu,serif;
+    position:fixed; top:0; right:0;
+    margin:1rem;
+    width:75px; height:40px
+}
+.prevnext a{
+    display:inline-block;
+    position:fixed;
+    width:40px; height:40px;
+    text-decoration:none;
+    font-weight:bolder;
+    font-size:2rem;
+}
+.prevnext a.index{top:0; right:1rem;}   /* &uarr; */
+.prevnext a.top{top:0; right:12rem;}     /* &#8673; */
+.prevnext a.prev{top:25px; right:14rem;} /* &#8672; */
+.prevnext a.next{top:25px; right:10rem;} /* &#8674; */
+
+
+/* ================ Particular elements ================ */
+.alternate-rows tr:nth-child(odd){background-color:#e0e0e0;}
+.alternate-rows tr:nth-child(even){background-color:#d9edf7;}
+
+.img-title{font-size:.9rem; font-weight:bold; text-align:center;}
+
+table.border{border-collapse:collapse;}
+table.border td{border:1px solid #a2a9b1;}
+
+table.wikitable{
+    border-collapse:collapse;
+}
+table.wikitable > tr > th, table.wikitable > * > tr > th {
+    /* background-color: #eaecf0; */
+    background-color: lightblue;
+    text-align: center;
+    vertical-align:top;
+}
+table.wikitable > tr > th,
+table.wikitable > tr > td,
+table.wikitable > * > tr > th,
+table.wikitable > * > tr > td {
+    border: 1px solid #a2a9b1;
+    padding: 0.2rem 0.4rem;
+    vertical-align:top;
+}
+table.wikitable tr td code{
+    background:none;
+}
+
+cite{
+    font-family:DejaVu,serif;
+    display:block;
+    margin:1rem;
+}
+blockquote{
+    display:block;
+    border:1px solid grey;
+    padding:5px;
+    margin:1rem;
+    font-family:DejaVu,serif;
+    background:#fee;
+}
+
+
+
+/* ================ carnet (pages yourte, télescope) ================ */
+.carnet_td_text{
+    padding:.5rem;
+}
+.carnet_td_image{
+    padding:.5rem 1rem;
+}
+.see-also{
+    margin-bottom:1rem;
+}
+
+/* ================ Navigation ================ */
+/* 
+:root {
+    --left-bg-color:#edebc2;
+    --left-shadow:0 1px 3px grey;
+    --left-border:1px solid grey;
+    --right-width:15%;
+    --prevnext-height:4rem;
+}
+
+.prevnext{
+    font-family:DejaVu,serif;
+    position:fixed; top:0; left:0;
+    margin:0;
+    width:var(--right-width);
+    height:var(--prevnext-height);
+    background:var(--left-bg-color);
+    border-bottom:var(--left-border);
+    border-right:var(--left-border);
+    box-shadow:var(--left-shadow);
+}
+.prevnext a{
+    display:inline-block;
+    position:fixed;
+    width:40px; height:40px;
+    text-decoration:none;
+    font-weight:bolder;
+    font-size:2rem;
+}
+.prevnext a:hover{
+    text-decoration:none;
+}
+.prevnext a.index{top:0; left:50px; font-size:0.5rem;}
+.prevnext a.top{top:0; left:80px;}
+.prevnext a.prev{top:25px; left:45px;}
+.prevnext a.next{top:25px; left:110px;}
+.prevnext a.topage{
+    top:15px; left:82px; color:#black; font-size:1.1rem;
+    transform:rotate(-90deg);
+}
+*/
+
+/* ================ Table of content ================ */
+/* 
+.toc{
+    font-family:Arial,Helvetica,sans-serif;
+    margin-bottom:1em;
+}
+.toc ul{list-style-type:none;}
+.toc{padding:0;}
+.toc>ul>li>a{font-weight:bold;}
+
+.intro{
+  line-height:1.7;
+    font-size:1.2rem;
+    margin:1rem 0 1rem 2rem;
+}
+*/
+
+/* ================ Particular elements ================ */
+/* 
+h1{
+    width:100%;
+    margin:auto;
+    text-align:center;
+    font-size:2.5rem;
+    font-weight:bold;
+    padding:0.3rem;
+    margin-bottom:4rem;
+}
+h1 .subtitle{
+    font-size:0.8em;
+}
+h2{
+    font-size:2rem;
+    margin:1rem 0;
+}
+h3{
+    font-size:1.5rem;
+    margin:1rem 0;
+}
+h4{
+    margin:.7rem 0;
+}
+
+.pre{
+    white-space:pre-wrap;
+}
+pre{
+    white-space:pre-wrap;
+    margin:1rem;
+    background:lightgrey;
+    padding:.5rem;
+    border-radius:2px;
+    border:1px solid #717a9f;
+    line-height:1.15;
+}
+pre.normal{
+    background:none;
+    border:none;
+    margin:0;
+    margin-left:1em;
+    padding:0;
+}
+code{
+}
+code.color{
+    background:lightgrey;
+}
+
+cite{
+    font-family:DejaVu,serif;
+    display:block;
+    margin:1rem;
+}
+blockquote{
+    display:block;
+    border:1px solid grey;
+    padding:5px;
+    margin:1rem;
+    font-family:DejaVu,serif;
+    background:#fee;
+}
+
+table.border{
+    border-collapse:collapse;
+}
+table.border td{
+    border: 1px solid #a2a9b1;
+}
+
+table.alternate tr:nth-child(even){
+    background: #eee
+}
+table.alternate tr:nth-child(odd){
+    background: #ddd
+}
+table.padded2 td{
+    padding:2px;
+}
+
+table.wikitable{
+    border-collapse:collapse;
+}
+table.wikitable > tr > th,
+table.wikitable > * > tr > th {
+    background-color:lightblue;
+    text-align:center;
+    vertical-align:top;
+}
+table.wikitable > tr > th,
+table.wikitable > tr > td,
+table.wikitable > * > tr > th,
+table.wikitable > * > tr > td {
+    border:1px solid #a2a9b1;
+    padding:0.2rem 0.4rem;
+    vertical-align:top;
+}
+table.wikitable tr td code{
+    background:none;
+}
+*/

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Position miroir secondaire | tig12.net</title>
+    <meta name="description" content="Calcul de la taille et de la position du miroir secondaire sur un télescope de type Newton">
+    <link href="static/css/tig12.net.css" rel="stylesheet" type="text/css">
+    <meta name="robots" content="index,follow">
+    <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+    <meta name="dcterms.rights" content="Creative commons by-sa 4.0">
+    <meta name="dcterms.rightsHolder" content="Thierry Graff">
+    <meta name="dcterms.dateCopyrighted" content="2017">
+    <style>
+body{
+    font-family:"Times New Roman", Times, serif;
+}
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="main">
+
+<header>
+<h1>
+Calcul de la position miroir du secondaire
+<div class="subtitle">Sur un télescope de type Newton</div>
+</h1>
+</header>
+
+<article>
+
+<div class="intro">
+    Le miroir primaire terminé, reste à construire la monture.<br>
+    Il faut d'abord choisir la position de l'oculaire et le diamètre du cône de lumière que l'on veut récupérer (la &ldquo;pupille de sortie&rdquo;).
+    <br>
+    <br>Il faut ensuite déterminer la position et la dimension du miroir secondaire.
+    <br>N'ayant trouvé cela ni sur internet ni dans un livre, j'ai fait le calcul. Les résultats obtenus sont cohérents, mais ça vaudrait peut-être le coup de les vérifier.
+</div>
+
+<div class="float-left center">
+    <img class="border margin" src="img/miroir_secondaire1.jpg" alt="Schéma télescope Newton avec miroir secondaire">
+    <div class="img-title">Figure 1 <span class="normal">Trajet d'un rayon non parallèle à l'axe</span></div>
+</div>
+<div class="margin2">
+Le miroir primaire est une portion de &ldquo;paraboloïde de révolution&rdquo;, surface générée par une <b>parabole</b> tournant sur elle-même autour de son <b>axe</b>, que l'on appelle <b>axe du miroir</b>.
+<br>On a la propriété : <b>tout rayon lumineux <i>parallèle à l'axe de la parabole</i> est réfléchi au foyer</b>.
+<br>Le miroir est le &ldquo;fond&rdquo; de ce paraboloide de révolution, un cercle de 30 cm de diamètre ; <b>l'axe du miroir passe par son centre</b>.
+Ainsi, si on coupe le miroir en passant par son centre, on a un morceau de parabole (à quelques centièmes de microns près).
+</div>
+<br class="clear-left">
+
+<br>On nomme :
+<ul>
+    <li><b>O</b> le centre du miroir</li>
+    <li><b>F</b> le foyer du télescope</li>
+    <li><b>d</b> la &ldquo;pupille de sortie&rdquo;</li>
+</ul>
+
+On utilise une propriété des paraboles :
+<div class="margin05 big1">Dans une parabole, tout rayon parallèle à l'axe de la parabole est réfléchi au foyer.</div>
+Ça n'est pas vrai pour un cercle, c'est pour ça qu'on est obligés d'avoir un miroir parabolique.
+
+<br>Ainsi, tous les rayons lumineux arrivant parallèles à l'axe seront réfléchis dans un <b>cône de sommet F</b>
+<br>Pour récupérer la lumière, on se place au foyer, et on y pose l'occulaire.
+<br><i>On cherche donc à intercepter la lumière réfléchie dans <b>un cercle de centre F et de diamètre d</b>
+<br>Ce cercle nous amène à construire <b>un deuxième cône, de sommet G</b></i>
+<br>
+<br>Le schéma est donc le suivant :
+
+<div class="flex-wrap">
+<div class="margin center">
+  <img class="border" src="img/miroir_secondaire2.jpg" alt="Trajet d'un rayon lumineux">
+  <div class="img-title">Figure 2</div>
+</div>
+<div class="margin">
+Pour observer, on ne peut pas mettre la tête directement en F, sinon on cacherait la lumière.
+<br>C'est pourquoi on place le miroir secondaire, <b>un petit miroir plan à 45°,
+<br>qui doit intercepter les rayons réfléchis dans le cône de sommet G</b> , et les dévier vers le porte-occulaire.
+</div>
+</div><!-- end class="flex-wrap" -->
+
+Sur le dessin, on voit que ce miroir plan (AB), est construit de manière à couper le cône de sommet G.
+<br>Le miroir secondaire est l'intersection entre un plan et un cône, c'est donc une <b>ellipse</b>.
+
+<img class="margin border" src="img/miroir_ellipse.png" alt="Miroir plan en ellipse">
+<br><b>AB</b> est le grand axe de cette ellipse, et <b>C</b> son centre.
+<br>
+<br>Sur la figure 2, on voit que <b>le miroir est décalé par rapport à l'axe du télescope</b>.
+<br>Regardons la zone en jaune : la partie de AB dans le cône de sommet G, mais hors du cône de sommet F.
+<br>Comme le miroir est incliné, cette partie est plus petite en A qu'en B.
+<br>L'axe du télescope ne coupe donc pas le miroir en son centre.
+<br>On va donc aussi récupérer des rayons lumineux non parallèles à l'axe.
+<br>On note <b>C'</b> l'intersection entre le miroir et l'axe du télescope.
+<br>Le petit axe de l'ellipse est C<sub>1</sub>C<sub>2</sub> = A<sub>1</sub>B<sub>1</sub>.
+
+<div class="margin bold">C'est cette valeur du petit axe qu'il faut spécifier lorsqu'on achète un miroir secondaire.</div>
+
+<div class="bold">
+Le but de cette page est donc de calculer :
+<br>- la distance AB,
+<br>- la position de C,
+<br>- le petit axe A<sub>1</sub>B<sub>1</sub>
+</div>
+                                                                                                                                         
+<div class="margin-top bold big2">Notations</div>
+On a déjà vu :
+<ul>
+    <li><b>O</b> le centre du miroir</li>
+</ul>
+<ul>
+    <li><b>F</b> le foyer du télescope</li>
+    <li><b>G</b> le sommet du deuxième cône</li>
+    <li>On rajoute <b>F'</b>, le &ldquo;foyer virtuel&rdquo; que l'on utilise, après déviation des rayons par le miroir secondaire.</li>
+</ul>
+La géométrie du miroir primaire nous fournit :
+<ul>
+    <li><b>D</b>, le diamètre du miroir ;</li>
+    <li><b>f</b>, la focale du miroir ;</li>
+    <li><b>f&rdquo;</b>, la flèche du miroir ;</li>
+</ul>
+
+<br>Valeurs pour mon télescope :
+<b>
+<br>D = 253 mm
+<br>f = 1260 mm
+<br>f&rdquo; = 3,18 mm
+</b>
+<br>L'épaisseur du matériau utilisé pour la construction de la monture nous donne <b>e</b> (4 mm pour mon télescope).
+<br>
+<br>Reste à choisir plusieurs valeurs :
+<ul class="spaced">
+    <li>
+        <b>d, la pupille de sortie</b> : dépend de l'usage qu'on veut faire du télescope. Pour de l'observation à l'oeil, j'ai pris 11 mm, ce qui laisse de la marge par rapport à la pupille de l'oeil (8mm au maximum, lorsqu'elle est dilatée).
+        <br>[Pour de la photo ou de la CCD, c'est un vaste sujet...]
+    </li>
+    <li>
+        <b>&delta;, la marge entre le bord du miroir et le bord <i>intérieur</i> du tube</b> : important, car la turbulence s'écoule le long du tube.
+    </li>
+    <li>
+        <b>d<sub>1</sub>, la place occupée par le porte-oculaire</b>, la distance entre le bord extérieur du tube et F'.
+        <br>Le choix de d<sub>1</sub> dépend de la place que l'on veut pour le porte-oculaire. Plus on veut un d<sub>1</sub> grand, plus on doit placer le miroir secondaire bas, et plus AB sera grand, plus le miroir secondaire occultera une part importante de lumière ; on a donc intérêt à ne pas avoir un d<sub>1</sub> inutilement trop grand.
+    </li>
+</ul>
+
+Pour mon télescope :
+<b>
+<br>d = 11 mm
+<br>&delta; = 30 mm
+<br>d<sub>1</sub> = 40 mm
+</b>
+<br>
+<br>On a maintenant suffisament de données pour déterminer AB et la position de C.
+<br>Les applications numériques (notées a.n.) correspondent aux valeurs de mon télescope.
+<br>
+<br><b>Autres notations :</b>
+<ul>
+    <li><b>R</b> est le rayon du miroir ; R = D/2.</li>
+    <li><b>C</b> est le centre du miroir secondaire.</li>
+    <li><b>C'</b> est l'intersection entre l'axe du miroir primaire et le miroir secondaire.</li>
+</ul>
+<ul>
+    <li><b>h = d<sub>1</sub> + &delta; + e</b></li>
+    <li><b>f &lsquo; = f - f &ldquo;</b></li>
+    <li><b>h' = OC'</b></li>
+    <li>Autres variables : voir figure 2</li>
+</ul>
+
+<!-- ************************************************************** -->
+<h2>1. Calculs préliminaires</h2>
+<ul>
+    <li>
+        <b>h'</b> : on a : <code>h' + R + h = f'</code>.
+        <br>Donc <code><b>h' = f' - R - h</b></code>.
+    </li>
+    <li>
+        <b>&alpha;</b> : <img class="inline border vertical-align-middle" src="img/math_tgalpha.png">                             
+    </li>
+    <li>
+        <b>l</b> : par Thalès en partant de G, on a : <img class="inline border vertical-align-middle" src="img/math_gfsgo.png">
+    </li>
+</ul>
+
+<br>Or GF = l et GO = f' + l.
+<br>Donc <img class="inline border vertical-align-middle" src="img/math_lsfpl.png">, ce qui donne :
+<img class="inline border vertical-align-middle" src="img/math_ldfp.png">.
+</li>
+<li><b>A'B'</b> : par Thalès en partant de G, on a : <img class="inline border vertical-align-middle" src="img/math_gcpsgo.png">
+<br>Or <code>GO = f' + l</code> et <code>GC' = f' + l - h'</code>.
+<br>Donc <img class="inline border vertical-align-middle" src="img/math_fppl.png">, ce qui donne :
+<img class="inline border vertical-align-middle" src="img/math_apbp.png">
+</li>
+<br>
+<li><b>&gamma;</b>, dont on va avoir besoin pour calculer AB :
+<br>On a : <img class="inline border vertical-align-middle" src="img/math_tgga.png">
+<br>a.n. : <code><b>&gamma; = 5,5°</b></code>
+</li>
+
+<!-- ************************************************************** -->
+<h2>2. Calcul de AB</h2>
+On décompose en AB = AC' + C'B
+
+<!-- ****************************** -->
+<h3>2.1 Calcul de AC'</h3>
+
+<img class="border" src="img/figure3.jpg" alt="Schéma triangle A A' C'">
+<br>On introduit l'angle <b>x</b> ; <code>x + &pi;/4 + &pi;/2 + &gamma; = &pi;</code>, donc <code><b>x = &pi;/4 - &gamma;</b></code>.
+<br>
+<br>On a : <code>C'A = C'H + HA</code>
+
+<div class="margin-top">D'une part <img class="inline border vertical-align-middle" src="img/math_cph.png"></div>
+
+<div class="margin-top">D'autre part <img class="inline border vertical-align-middle" src="img/math_ha.png"></div>
+
+<br>On ne connaît pas AA', alors on s'en débarasse :
+<br>on a <img class="inline border vertical-align-middle" src="img/math_aph1.png"> et <img class="inline border vertical-align-middle" src="img/math_aph.png">, ce qui donne : <img class="inline border vertical-align-middle" src="img/math_aap.png">
+<br>Donc <img class="inline border vertical-align-middle" src="img/math_ha2.png">.
+<br>
+<br>Finalement : 
+<div class="margin border inline-block padding">
+<img class="inline border vertical-align-middle" src="img/math_cpa.png"> Formule [1]
+</div>
+
+<!-- ****************************** -->
+<h3>2.2 Calcul de C'B</h3>
+<img class="border" src="img/figure4.jpg">
+<br><br>On introduit l'angle <b>y</b> ; y + &pi;/2 - &gamma; + &pi;/4 = &pi;, donc <b>y = &pi;/4 - &gamma;</b>.
+<br>
+<br>En suivant la même méthode que pour AB, on obtient :
+
+<br><div class="margin border inline-block padding">
+<img class="inline border vertical-align-middle" src="img/math_cpb.png"> Formule [2]
+</div>
+
+<details>
+<summary>Détails du calcul</summary>
+<br>On a : C'B = C'H + HB
+<br>HB = C'B'cos(&pi;/4) = A'B'/2cos(&pi;/4) = <b>A'B'/2sqrt(2)</b>.
+<br>HB = BB'cos(y).
+<br>On ne connaît pas BB', alors on s'en débarasse :
+<br>on a : B'H = BB'sin(y)
+<br>et : B'H = C'B'sin(&pi;/4)
+<br>ce qui donne : BB' = A'B'/(2sqrt(2)sin(y)).
+<br>Donc HB = A'B'/(2sqrt(2)tg(y)).
+<br>
+</details> 
+
+<!-- ****************************** -->
+<h3>2.3 Calcul de AB</h3>
+En combinant [1] et [2], on obtient <img class="inline border vertical-align-middle" src="img/math_ab1.png">
+<br>
+<br>En exprimant x et y en fonction de &gamma;, on obtient enfin 
+<img class="inline border2 vertical-align-middle" src="img/math_ab.png">
+<br>
+<br>a.n. : <b>AB = 61.5 mm</b>
+
+<!-- ****************************** -->
+<h3>Infos supplémentaires</h3>
+Au passage, la présence du miroir secondaire cache une partie de la lumière.
+
+<br>Ce sont les rayons arrivant dans un cercle de rayon <img class="inline border vertical-align-middle" src="img/math_r1.png">
+<br>Le pourcentage de rayons arrêtés est : <img class="inline border vertical-align-middle" src="img/math_p.png"> (pourcentage en surface)
+<br>a.n. : <b>p = 11,8%</b>.
+
+
+<!-- ************************************************************** -->
+<h2>3. Position de C</h2>
+Si quelqu'un veut vérifier j'ai scanné les détails : <a href="img/scan_details_c.jpg">scan_details_c.jpg</a>.
+<br><br><img class="border2" src="img/math_ccp.png">
+<br>a.n. : CC' = 4,39 mm
+
+<br>
+<div class="float-left margin">
+    <div><b>Figure 2 simplifiée</b></div><br>
+    <img class="border" src="img/miroir_secondaire6.jpg" alt="Repère pour position miroir secondaire">
+</div>
+<br>En définissant un repère (O<sub>1</sub>, x, y, z), avec :
+<br>- O<sub>1</sub>y passant par O
+<br>- O<sub>1</sub>z parallèle à l'axe du télescope
+
+<br>Dans (O<sub>1</sub>, x, y, z), les coordonnées de C et C' sont :
+<br><img class="inline border2 vertical-align-middle" src="img/math_coordc.png"> et <img class="inline border2 vertical-align-middle" src="img/math_coordcp.png">,
+<br>
+<br>avec <img class="inline border vertical-align-middle" src="img/math_delta.png">
+<br class="clear-left">
+
+<!-- ************************************************************** -->
+<h2>Calcul du petit axe A<sub>1</sub>B<sub>1</sub></h2>
+<img class="border2" src="img/math_a1b1.png">
+<br>a.n. : A<sub>1</sub>B<sub>1</sub> = 37,5 mm
+
+<h2>A Vérifier</h2>
+Pour que ces calculs puissent être considérés comme fiables, il faudrait que d'autres que moi les vérifient (ça a été vérifié par une personne) ; la seule chose que je puisse dire, c'est que ça a donné des résultats cohérents pour mon télescope.
+<br><br>Si quelqu'un a connaissance d'un livre ou d'un site qui a fait la même chose, merci de me le faire savoir.
+
+
+</article>
+</div><!-- end class="main" -->
+
+</div><!-- end class="container" -->
+
+<!-- ************************************* -->
+<footer>
+<div>
+<a href="https://github.com/tig12">git repositories</a>
+<a href="../../about/about.en.html">About this site</a>
+<a href="../../about/about.fr.html">A propos de ce site</a>
+<a href="../../about/contact.en.html">Contact</a>
+</div>
+</footer>
+</body>
+</html>
+
