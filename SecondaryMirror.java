@@ -97,7 +97,6 @@ public class SecondaryMirror {
         System.out.println("\n");
         System.out.println("CA1 : " + CA1);
         System.out.println("A1B1 : " + CA1*2);
-        
     }
 
 } // end class

@@ -1,12 +1,16 @@
 
-Single java class to compute the size and position of the secondary mirror of a Newton telescope.
+Single java class to compute the size and position of the secondary mirror of a
+Newton telescope.
 
-See docs/index.html (in French) to understand the meaning of variables.
+See docs/index.html or https://tig12.github.io/miroir-secondaire
+to understand the meaning of variables (in French).
 
 Usage: 
-- Adapt the values of variables f, D, fpp, d, h in method main()
-- run: java SecondaryMirror.java
+- In SecondaryMirror.java, in method main(), adapt the values of variables
+    f, D, fpp, d, h
+- run: 
+    java SecondaryMirror.java
 
-Repository created on 2024-02-23 by Thierry Graff
+Repository created on 2024-02-23 by Thierry Graff ; coded in 2001.
 
 Originally published on https://tig12.net/astronomy/position-miroir-secondaire/position-miroir-secondaire.html
